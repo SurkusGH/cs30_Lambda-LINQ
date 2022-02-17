@@ -37,6 +37,7 @@ namespace cs30_paskaita_Lambda_LINQ
             Console.WriteLine();
             foreach (var x in intArray3) { Console.WriteLine(x); }
             Console.WriteLine();
+
         }
 
         // Sukurkite sąraša teigiamų ir neigiamų elementų, sukurkite naują sąrašą iš jo su LINQ grąžinant tik teigiamus skaičius kurie ne didesni už 10.
@@ -106,8 +107,8 @@ namespace cs30_paskaita_Lambda_LINQ
         {
             Console.WriteLine("Solution_01_pt8!");
             var personList = new List<Person> { new Person("Vytautas", 30), new Person("Gediminas", 35), new Person("Algirdas", 40) };
-            var personAgeList = personList.Select(x => x.Age).OrderByDescending(x => x);
-            foreach (var x in personAgeList) { Console.WriteLine(x); }
+            var personAgeList = personList.OrderByDescending(x => x.Age);
+            foreach (var x in personAgeList) { Console.WriteLine($"{x.Name}, {x.Age}"); }
             Console.WriteLine();
         }
 
